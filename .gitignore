@@ -138,6 +138,9 @@ hs_err_pid*
 build/
 .idea
 
+#
+application-oauth.properties
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
