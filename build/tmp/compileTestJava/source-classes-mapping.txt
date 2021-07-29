@@ -1,0 +1,6 @@
+com/book/springboot/dmain/posts/PostsRepositoryTest.java
+ com.book.springboot.dmain.posts.PostsRepositoryTest
+com/book/springboot/web/HelloControllerTest.java
+ com.book.springboot.web.HelloControllerTest
+com/book/springboot/web/dto/HelloResponseDtoTest.java
+ com.book.springboot.web.dto.HelloResponseDtoTest
