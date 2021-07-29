@@ -17,7 +17,7 @@ cache:  # 그레이들을 통해 의존성을 받게 되면 이를 해당 디렉
 
 # master 브랜치에 푸시되었을 때 수행하는 명령어입니다.
 # 여기서는 프로젝트 내부에 둔 gradlew을 통해 clean & build를 수행
-script: ".gradlew clean build"
+script: "./gradlew clean build"
 
 # CI 실행 완료 시 메일로 알람
 notifications:  # Travis Ci실행 완료시 자동으로 알람이 가도록 메일설정
