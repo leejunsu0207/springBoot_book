@@ -3,7 +3,7 @@ jdk:
   - openjdk8
 
 # Travis CI를 어느 브랜치가 푸시될 때 수행할지 지정한다.
-# 현재 옵션은 오직 master 브랜치에 push될 때만 수행한다.
+# 현재 옵션은 오직 master 브랜치에 push 될 때만 수행한다.
 branches:
   only:
     - master
