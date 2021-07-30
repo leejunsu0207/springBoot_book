@@ -56,6 +56,3 @@ notifications:  # Travis Ci 실행 완료시 자동으로 알람이 가도록 �
   email:
     recipients:
       - qkfhtit@gmail.com
-
-
-# 왜안될까!!!!
