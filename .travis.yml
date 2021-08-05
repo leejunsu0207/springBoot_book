@@ -8,9 +8,6 @@ branches:
   only:
     - master
 
-before_install:
-  - chmod +x gradlew
-
 # Travis Ci 서버의 HOME
 cache:  # 그레이들을 통해 의존성을 받게 되면 이를 해당 디렉토리에 캐시하여, 같은 의존성은 다음 배포 때부터 다시 받지 않도록 설정
   directories:
@@ -27,16 +24,16 @@ before_deploy:
   - mv springBoot_book.zip deploy/springBoot_book.zip
 
 
-#deploy:
-#  - provider: s3
-#  access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
-#  secret_access_key: $AWS_SECRET_KEY #Travis repo settings에 설정된 값
-#  bucket: ljs-springboot-book-build #S3 버킷
-#  region: ap-northeast-2
-#  skip_cleanup: true
-#  acl: private # zip 파일 접근을 private으로
-#  local_dir: deploy # before_deploy에서 생성한 디렉토리
-#  wait-until-deployed: true
+deploy:
+  - provider: s3
+  access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+  secret_access_key: $AWS_SECRET_KEY #Travis repo settings에 설정된 값
+  bucket: ljs-springboot-book-build #S3 버킷
+  region: ap-northeast-2
+  skip_cleanup: true
+  acl: private # zip 파일 접근을 private으로
+  local_dir: deploy # before_deploy에서 생성한 디렉토리
+  wait-until-deployed: true
 
 #  - provider: codedeploy
 #  access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
@@ -49,8 +46,8 @@ before_deploy:
 #  region: ap-northeast-2
 #  wait-until-deployed: true
 
-
-
+before_install:
+  - chmod +x gradlew
 
 # CI 실행 완료 시 메일로 알람
 notifications:  # Travis Ci 실행 완료시 자동으로 알람이 가도록 메일설정
