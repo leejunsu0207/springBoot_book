@@ -1,9 +1,9 @@
 version: 0.0 # 1. CodeDeploy버전 명시  2. 프로젝트 버전이 아니므로 0.0외에 다른버전을 사용하면 오류가 발생
 os: linux
 files:
-  -source:  /
-  destination: /home/ec2-user/app/step2/zip/
-  overwrite: yes
+  - source:  /
+    destination: /home/ec2-user/app/step2/zip/
+    overwrite: yes
 
 
 #files:
