@@ -9,7 +9,8 @@ cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> 현재 구동중인 애플리케이션 pid: $CURRENT_PID"
 
-CURRENT_PID=$(pgrep -f1 springBoot_book | grep jar | awk '{print $1}')
+#CURRENT_PID=$(pgrep -f1 springBoot_book | grep jar | awk '{print $1}')
+CURRENT_PID=$(ps -ef | grep ${PROJECT_NAME} | grep jar | awk '{print $2}')
 # CURRENT_PID
 # 현재 수행중인 스프링 부트 애플리케이션의 프로세스 id를 찾습니다.
 # 실행 중이면 종료하기 위해서입니다.
