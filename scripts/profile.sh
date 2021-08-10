@@ -8,40 +8,32 @@ function find_idle_profile() {
                                                                                     # 응답값을 HttpStatus로 받음
                                                                                     # 정상이면 200, 오류가 발생한다면 400~503사이로 발생하니 400이상은 모두 예외 로 보고 real2를 현재 profile로 사용
   
-  if [ ${RESPONSE_CODE} -ge 400 ] # 400 보다 크면 (즉, 40x / 50x 에러 모두 포함)
-
+  if [ ${RESPONSE_CODE} -ge 400 ] # 400 보다 크면 (즉, 40x/50x 에러 모두 포함)
   then
       CURRENT_PROFILE=real2
   else
       CURRENT_PROFILE=$(curl -s http://localhost/profile)
   fi
 
-
-  if [ ${CURRENT_PROFILE} == real1 ] # 400 보다 크면 (즉, 40x / 50x 에러 모두 포함)
-
-    then
-        IDLE_PROFILE=real2  # 엔진엑스와 연결되지 않은 profile입니다.
-                            # 스프링 부트 프로젝트를 이 profile로 연결하기 위해 반환
-    else
-        IDLE_PROFILE=real1
+  if [ ${CURRENT_PROFILE} == real1 ]
+  then
+    IDLE_PROFILE=real2
+  else
+    IDLE_PROFILE=real1
   fi
 
-  echo "${IDLE_PROFILE}"  # bash라는 스크립트는 값을 반환하는 기능이 없음
-                          # 그래서 제일 마지막 줄에 echo로 결과를 출력 후, 클라이언트에서 그 값을 잡아서 ($(find_idle_profile)) 사용한다
-                          # 중간에 echo를 사용하면 안됨
-    
+  echo "${IDLE_PROFILE}"
 }
 
 # 쉬고 있는 profile의 port 찾기
-function find_idle_port() {
-    IDLE_PROFILE=${find_idle_profile}
+function find_idle_port()
+{
+    IDLE_PROFILE=$(find_idle_profile)
 
     if [ ${IDLE_PROFILE} == real1 ]
-
     then
       echo "8081"
     else
       echo "8082"
-
     fi
 }
