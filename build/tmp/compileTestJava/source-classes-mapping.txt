@@ -1,6 +1,14 @@
-com/book/springboot/dmain/posts/PostsRepositoryTest.java
- com.book.springboot.dmain.posts.PostsRepositoryTest
 com/book/springboot/web/HelloControllerTest.java
  com.book.springboot.web.HelloControllerTest
+com/book/springboot/web/ProfileControllerTest.java
+ com.book.springboot.web.ProfileControllerTest
+com/book/springboot/web/IndexControllerTest.java
+ com.book.springboot.web.IndexControllerTest
+com/book/springboot/web/ProfileControllerUnitTest.java
+ com.book.springboot.web.ProfileControllerUnitTest
+com/book/springboot/domain/posts/PostsRepositoryTest.java
+ com.book.springboot.domain.posts.PostsRepositoryTest
 com/book/springboot/web/dto/HelloResponseDtoTest.java
  com.book.springboot.web.dto.HelloResponseDtoTest
+com/book/springboot/web/PostsApiControllerTest.java
+ com.book.springboot.web.PostsApiControllerTest
